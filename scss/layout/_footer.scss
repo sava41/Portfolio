@@ -1,0 +1,20 @@
+#footer {
+    color: $seashellpeach;
+    font-size: 0.75rem;
+    text-align: center;
+    font-family: $IBM;
+    margin-bottom: 10px;
+    padding-top: 5px;
+    @include media('>=phone') {
+        margin-bottom: 42px;
+    }
+    p {
+        margin-bottom: 0;
+    }
+    .back-top {
+        margin-bottom: 40px;
+        &:hover {
+            margin-bottom: 42.5px;
+        }
+    }
+}

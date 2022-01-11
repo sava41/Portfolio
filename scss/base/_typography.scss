@@ -1,0 +1,152 @@
+// Typography
+
+/*  ---------------------------------------------------------
+	1. General reset
+	---------------------------------------------------------*/
+body {
+	
+}
+a,
+.btn,
+button {
+	text-decoration: none;
+	@extend %transition;
+
+	&:focus,
+	&:active {
+		outline: none;
+	}
+	&:before, &:after,
+	*, *:before, *:after {
+		@extend %transition;
+	}
+}
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6,
+.h {
+	font-family: $headings-font-family;
+	font-weight: bold;
+	margin: 0 0 8px;
+	color: $seashellpeach;
+    @include media('>=phone') {
+        margin: 0 0 30px;
+    }
+	&:last-child {
+		margin-bottom: 0;
+	}
+	a {
+		color: inherit;
+		
+		&:hover {
+			color: $base-link-color;
+		}
+	}
+}
+
+h1, .h1 {
+	font-size: $h1-small-font-size;
+	
+	@include media('>=tablet') {
+		font-size: $h1-font-size;
+	}
+}
+
+h2, .h2 {
+	font-size: $h2-small-font-size;
+	
+	@include media('>=tablet') {
+		font-size: $h2-font-size;
+	}
+}
+
+h3, .h3 {
+	font-size: $h3-small-font-size;
+	
+	@include media('>=tablet') {
+		font-size: $h3-font-size;
+	}
+}
+
+h4, .h4 {
+	font-size: $h4-small-font-size;
+	
+	@include media('>=tablet') {
+		font-size: $h4-font-size;
+	}
+}
+
+h5, .h5 {
+	font-size: $h5-small-font-size;
+	font-weight: 500;
+	
+	@include media('>=tablet') {
+		font-size: $h5-font-size;
+	}
+}
+
+h6, .h6 {
+	font-size: $h6-small-font-size;
+	
+	@include media('>=tablet') {
+		font-size: $h6-font-size;
+	}
+}
+
+p {
+	margin: 0 0 10px;
+    @include media('>=phone') {
+        margin: 0 0 33px;
+    }
+	&:last-child {
+		margin-bottom: 0;
+	}
+    a {
+        color: $secondary;
+        text-decoration: underline;
+        &:hover {
+            text-decoration: none;
+            color: $secondary;
+        }
+    }
+}
+
+a {
+	color: $base-link-color;
+	
+	&:hover {
+		color: $base-link-hover-color;
+		text-decoration: underline;
+	}
+	&:hover,
+	&:focus {
+		text-decoration: none;
+	}
+}
+
+.container {
+	width: 100%;
+	padding: 0 8px;
+	margin: 0 auto;
+	@extend %clearfix;
+    @include media('>=phone') {
+        padding: 0 22px;
+        max-width: 1172px;
+    }
+    &.sm {
+        max-width: 780px;
+    }
+}
+.container-fluid {
+	width: 100%;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#wrapper {
+    overflow: hidden;
+    position: relative;
+}

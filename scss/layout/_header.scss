@@ -1,0 +1,67 @@
+#header {
+    overflow: hidden;
+    padding-top: 22px;
+    padding-bottom: 26px;
+    display: flex;
+    align-items: center;
+    @include media('>=phone') {
+        padding-bottom: 30px;
+    }
+    @include media('>=desktop') {
+        padding-top: 42px;
+    }
+}
+
+.logo {
+    @include size(242px, 82px);
+    text-align: center;
+    @include media('>=phone') {
+        @include size(353px, 120px);
+    }
+    @include media('>=desktop') {
+        @include size(430px, 146px);
+    }
+    img {
+        transition: all 0.01s ease;
+        width: 100%;
+    }
+    &:hover {
+        img {
+            width: 98%;
+            margin: 0 auto; 
+        }
+    }
+}
+
+#nav {
+    margin-left: auto;
+    ul {
+        @extend %clearfix;
+        @extend %listreset;
+        font-size: 1.5rem;
+        font-family: $IBM;
+        font-weight: 500; 
+        @include media('>=phone') {
+            font-size: 1.875rem;
+        }
+        li {
+            display: block;
+            text-align: right;
+            margin-bottom: 20px;
+            transition: all 0.01s ease;
+            @include media('>=phone') {
+                margin-bottom: 42px;
+            }
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                color: $primary;
+                transition: all 0.01s ease;   
+                &:hover {
+                    font-size: 1.75rem;  
+                }
+            }
+        }
+    }
+}

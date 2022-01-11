@@ -1,0 +1,121 @@
+$white:        #fff;
+$black:        #000;
+$gray-dark:    #878D96;
+$gray:         #c1c1c1;
+$red:          #CF0000;
+$thunder:      #1A181A;
+$persianpink:  #FD88C2;   
+$aquamarine: #88FFE2;
+$seashellpeach: #FFF7EE;
+$charade: #282936;
+
+$pelorous: #3FA6B9;
+$tangaroa: #031F2D;
+
+$redpink:     #ED5CA1;
+$orange:     #FF940C;
+$green:     #39F400;
+
+$blue:     #0079B7;
+$blue-500: #7EB9DA;
+$blue-200: #C9E0EF;
+
+$blue-sky:     #00BAEA;
+$blue-sky-500: #7EDAF3;
+$blue-sky-200: #C9EDF9;
+
+$purple:     #32034f;
+$purple-800: #8032E8;
+$purple-600: #995AEC;
+$purple-400: #B182F0;
+$purple-300: #CAAAF5;
+$purple-200: #E2D2F9;
+$purple-100: #EFE6FB;
+
+$purple-dark-800: #220A52;
+$purple-dark-600: #4F3B74;
+$purple-dark-400: #7B6C97;
+$purple-dark-300: #A79DBA;
+$purple-dark-200: #D3CEDC;
+$purple-dark-100: #E9E7EE;
+
+
+$primary:    $persianpink;
+$success:    $green;
+$warning:    $orange;
+$danger:     $red;
+$error:      $redpink;
+
+$text-color: $white;
+$secondary:  $aquamarine;
+$disabled:   $purple-dark-300;
+
+$border-color: $purple-dark-200;
+$border-width: 1px;
+
+$border-radius:    8px;
+$border-radius-xs: 4px;
+$border-radius-md: 12px;
+$border-radius-lg: 14px;
+
+$base-font-sans-serif: 'Roboto', 'Helvetica', sans-serif;
+$IBM: 'IBM Plex Mono', monospace;
+$base-font-serif: $base-font-sans-serif;
+
+
+// Body
+$base-text-color: $seashellpeach;
+$base-background-color: $thunder;
+$font-size-base: 16px;
+$line-height-base: 1.3;
+$base-font-family: $base-font-sans-serif;
+
+$font-size-lg: 20px;
+$font-size-md: 18px;
+$font-size-sm: 14px;
+$font-size-xs: 12px;
+
+$vertical-rhythm: ($line-height-base * 1em);
+
+$base-min-width: 320px;
+$base-max-width: 1180px;
+
+// Liks
+$base-link-color: $purple-600;
+$base-link-hover-color: $primary;
+
+// Buttons 
+$btn-color: $white;
+$btn-background: $purple-800;
+$btn-padding: 14px 15px;
+$btn-font-size: 13px;
+
+// Forms
+$form-element-padding: 15px;
+$form-element-color: $black;
+$form-element-background: $white;
+$form-element-border-color: $pelorous;
+$form-element-focus-border-color: $base-text-color;
+$placeholder-color: $black;
+
+// Headers
+$h1-font-size: 2.25rem;
+$h2-font-size: 1.75rem;
+$h3-font-size: 1.5rem;
+$h4-font-size: 1.25rem;
+$h5-font-size: 1.125rem;
+$h6-font-size: 1rem;
+
+// Headers for mobile screen
+$h1-small-font-size: $h1-font-size;
+$h2-small-font-size: 1.5rem;
+$h3-small-font-size: $h3-font-size;
+$h4-small-font-size: $h4-font-size;
+$h5-small-font-size: $h5-font-size;
+$h6-small-font-size: $h6-font-size;
+
+$headings-font-family: inherit;
+$headings-color: $text-color;
+
+
+$animation-speed: 0.3s;
