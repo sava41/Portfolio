@@ -191,7 +191,8 @@ figure {
  * Address differences between Firefox and other browsers.
  */
 hr {
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   height: 0;
 }
 
@@ -264,9 +265,9 @@ select {
  *    `input` and others.
  */
 button,
-html input[type=button],
-input[type=reset],
-input[type=submit] {
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
   -webkit-appearance: button;
   /* 2 */
   cursor: pointer;
@@ -305,9 +306,10 @@ input {
  * 1. Address box sizing set to `content-box` in IE 8/9/10.
  * 2. Remove excess padding in IE 8/9/10.
  */
-input[type=checkbox],
-input[type=radio] {
-  box-sizing: border-box;
+input[type="checkbox"],
+input[type="radio"] {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   /* 1 */
   padding: 0;
   /* 2 */
@@ -318,8 +320,8 @@ input[type=radio] {
  * `font-size` values of the `input`, it causes the cursor style of the
  * decrement button to change from `default` to `text`.
  */
-input[type=number]::-webkit-inner-spin-button,
-input[type=number]::-webkit-outer-spin-button {
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
   height: auto;
 }
 
@@ -327,10 +329,11 @@ input[type=number]::-webkit-outer-spin-button {
  * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
  * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
  */
-input[type=search] {
+input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
-  box-sizing: content-box;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
   /* 2 */
 }
 
@@ -339,8 +342,8 @@ input[type=search] {
  * Safari (but not Chrome) clips the cancel button when the search input has
  * padding (and `textfield` appearance).
  */
-input[type=search]::-webkit-search-cancel-button,
-input[type=search]::-webkit-search-decoration {
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none;
 }
 
@@ -400,13 +403,15 @@ th {
   list-style: none;
 }
 
-#nav ul:after, #header:after, .container:after, .clearfix:after {
-  content: "";
+.clearfix:after, .container:after, #header:after, #nav ul:after {
+  content: '';
   display: block;
   clear: both;
 }
 
-a:before, a:after,
+a,
+.btn,
+button, a:before, a:after,
 a *, a *:before, a *:after,
 .btn:before,
 .btn:after,
@@ -417,9 +422,8 @@ button:before,
 button:after,
 button *,
 button *:before,
-button *:after, a,
-.btn,
-button {
+button *:after {
+  -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
@@ -432,11 +436,13 @@ button {
 }
 
 html {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
 * {
@@ -445,7 +451,7 @@ html {
 
 body {
   color: #FFF7EE;
-  background: #1A181A;
+  background: #080808;
   font: 16px/1.3 "Roboto", "Helvetica", sans-serif;
   min-width: 320px;
   -webkit-font-smoothing: antialiased;
@@ -470,6 +476,7 @@ a,
 button {
   text-decoration: none;
 }
+
 a:focus, a:active,
 .btn:focus,
 .btn:active,
@@ -477,6 +484,7 @@ button:focus,
 button:active {
   outline: none;
 }
+
 h1, .h1,
 h2, .h2,
 h3, .h3,
@@ -489,17 +497,19 @@ h6, .h6,
   margin: 0 0 8px;
   color: #FFF7EE;
 }
+
 @media (min-width: 767px) {
   h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6,
-.h {
+  h2, .h2,
+  h3, .h3,
+  h4, .h4,
+  h5, .h5,
+  h6, .h6,
+  .h {
     margin: 0 0 30px;
   }
 }
+
 h1:last-child, .h1:last-child,
 h2:last-child, .h2:last-child,
 h3:last-child, .h3:last-child,
@@ -509,6 +519,7 @@ h6:last-child, .h6:last-child,
 .h:last-child {
   margin-bottom: 0;
 }
+
 h1 a, .h1 a,
 h2 a, .h2 a,
 h3 a, .h3 a,
@@ -518,6 +529,7 @@ h6 a, .h6 a,
 .h a {
   color: inherit;
 }
+
 h1 a:hover, .h1 a:hover,
 h2 a:hover, .h2 a:hover,
 h3 a:hover, .h3 a:hover,
@@ -531,6 +543,7 @@ h6 a:hover, .h6 a:hover,
 h1, .h1 {
   font-size: 2.25rem;
 }
+
 @media (min-width: 992px) {
   h1, .h1 {
     font-size: 2.25rem;
@@ -540,6 +553,7 @@ h1, .h1 {
 h2, .h2 {
   font-size: 1.5rem;
 }
+
 @media (min-width: 992px) {
   h2, .h2 {
     font-size: 1.75rem;
@@ -549,6 +563,7 @@ h2, .h2 {
 h3, .h3 {
   font-size: 1.5rem;
 }
+
 @media (min-width: 992px) {
   h3, .h3 {
     font-size: 1.5rem;
@@ -558,6 +573,7 @@ h3, .h3 {
 h4, .h4 {
   font-size: 1.25rem;
 }
+
 @media (min-width: 992px) {
   h4, .h4 {
     font-size: 1.25rem;
@@ -568,6 +584,7 @@ h5, .h5 {
   font-size: 1.125rem;
   font-weight: 500;
 }
+
 @media (min-width: 992px) {
   h5, .h5 {
     font-size: 1.125rem;
@@ -577,6 +594,7 @@ h5, .h5 {
 h6, .h6 {
   font-size: 1rem;
 }
+
 @media (min-width: 992px) {
   h6, .h6 {
     font-size: 1rem;
@@ -586,18 +604,22 @@ h6, .h6 {
 p {
   margin: 0 0 10px;
 }
+
 @media (min-width: 767px) {
   p {
     margin: 0 0 33px;
   }
 }
+
 p:last-child {
   margin-bottom: 0;
 }
+
 p a {
   color: #88FFE2;
   text-decoration: underline;
 }
+
 p a:hover {
   text-decoration: none;
   color: #88FFE2;
@@ -605,12 +627,15 @@ p a:hover {
 
 a {
   color: #995AEC;
+  -webkit-transition: none;
   transition: none;
 }
+
 a:hover {
   color: #FD88C2;
   text-decoration: underline;
 }
+
 a:hover, a:focus {
   text-decoration: none;
 }
@@ -620,12 +645,14 @@ a:hover, a:focus {
   padding: 0 20px;
   margin: 0 auto;
 }
+
 @media (min-width: 767px) {
   .container {
     padding: 0 22px;
     max-width: 1172px;
   }
 }
+
 .container.sm {
   max-width: 780px;
 }
@@ -644,14 +671,20 @@ a:hover, a:focus {
 #header {
   padding-top: 22px;
   padding-bottom: 26px;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
+
 @media (min-width: 767px) {
   #header {
     padding-bottom: 30px;
   }
 }
+
 @media (min-width: 1200px) {
   #header {
     padding-top: 42px;
@@ -663,19 +696,23 @@ a:hover, a:focus {
   height: auto;
   text-align: center;
 }
+
 @media (min-width: 767px) {
   .logo {
     width: 353px;
     height: auto;
   }
 }
+
 @media (min-width: 1200px) {
   .logo {
     width: 430px;
     height: auto;
   }
 }
+
 .logo img {
+  -webkit-transition: all 0.01s ease;
   transition: all 0.01s ease;
   width: 100%;
 }
@@ -683,70 +720,81 @@ a:hover, a:focus {
 #nav {
   margin-left: auto;
 }
+
 #nav ul {
   font-size: 1.5rem;
   line-height: 1.5rem;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 500;
 }
+
 @media (min-width: 767px) {
   #nav ul {
     font-size: 1.875rem;
   }
 }
+
 #nav ul li {
   display: block;
   text-align: right;
   margin-bottom: 20px;
 }
+
 @media (min-width: 767px) {
   #nav ul li {
     margin-bottom: 42px;
   }
 }
+
 #nav ul li:last-child {
   margin-bottom: 0;
 }
+
 #nav ul li a {
   color: #FD88C2;
   display: inline-block;
-  transform: scale(1.06);
+  -webkit-transform: scale(1.06);
+          transform: scale(1.06);
 }
+
 #nav ul li a:hover {
   color: #FD88C2;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 /*!
-  Theme: Dracula
-  Author: Mike Barkmin (http://github.com/mikebarkmin) based on Dracula Theme (http://github.com/dracula)
+  Theme: Outrun Dark
+  Author: Hugo Delahousse (http://github.com/hugodelahousse/)
   License: ~ MIT (or more permissive) [via base16-schemes-source]
   Maintainer: @highlightjs/core-team
   Version: 2021.09.0
 */
 /*
   WARNING: DO NOT EDIT THIS FILE DIRECTLY.
-  This theme file was auto-generated from the Base16 scheme dracula
+
+  This theme file was auto-generated from the Base16 scheme outrun-dark
   by the Highlight.js Base16 template builder.
+
   - https://github.com/highlightjs/base16-highlightjs
 */
 /*
-base00  #282936  Default Background
-base01  #3a3c4e  Lighter Background (Used for status bars, line number and folding marks)
-base02  #4d4f68  Selection Background
-base03  #626483  Comments, Invisibles, Line Highlighting
-base04  #62d6e8  Dark Foreground (Used for status bars)
-base05  #e9e9f4  Default Foreground, Caret, Delimiters, Operators
-base06  #f1f2f8  Light Foreground (Not often used)
-base07  #f7f7fb  Light Background (Not often used)
-base08  #ea51b2  Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
-base09  #b45bcf  Integers, Boolean, Constants, XML Attributes, Markup Link Url
-base0A  #00f769  Classes, Markup Bold, Search Text Background
-base0B  #ebff87  Strings, Inherited Class, Markup Code, Diff Inserted
-base0C  #a1efe4  Support, Regular Expressions, Escape Characters, Markup Quotes
-base0D  #62d6e8  Functions, Methods, Attribute IDs, Headings
-base0E  #b45bcf  Keywords, Storage, Selector, Markup Italic, Diff Changed
-base0F  #00f769  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
+base00  #00002A  Default Background
+base01  #20204A  Lighter Background (Used for status bars, line number and folding marks)
+base02  #30305A  Selection Background
+base03  #50507A  Comments, Invisibles, Line Highlighting
+base04  #B0B0DA  Dark Foreground (Used for status bars)
+base05  #D0D0FA  Default Foreground, Caret, Delimiters, Operators
+base06  #E0E0FF  Light Foreground (Not often used)
+base07  #F5F5FF  Light Background (Not often used)
+base08  #FF4242  Variables, XML Tags, Markup Link Text, Markup Lists, Diff Deleted
+base09  #FC8D28  Integers, Boolean, Constants, XML Attributes, Markup Link Url
+base0A  #F3E877  Classes, Markup Bold, Search Text Background
+base0B  #59F176  Strings, Inherited Class, Markup Code, Diff Inserted
+base0C  #0EF0F0  Support, Regular Expressions, Escape Characters, Markup Quotes
+base0D  #66B0FF  Functions, Methods, Attribute IDs, Headings
+base0E  #F10596  Keywords, Storage, Selector, Markup Italic, Diff Changed
+base0F  #F003EF  Deprecated, Opening/Closing Embedded Language Tags, e.g. <?php ?>
 */
 pre code.hljs {
   display: block;
@@ -759,32 +807,38 @@ code.hljs {
 }
 
 .hljs {
-  color: #e9e9f4;
-  background: #282936;
+  color: #D0D0FA;
+  background: #00002a00;
+}
+
+.hljs::-moz-selection,
+.hljs ::-moz-selection {
+  background-color: #30305A;
+  color: #D0D0FA;
 }
 
 .hljs::selection,
 .hljs ::selection {
-  background-color: #4d4f68;
-  color: #e9e9f4;
+  background-color: #30305A;
+  color: #D0D0FA;
 }
 
 /* purposely do not highlight these things */
-/* base03 - #626483 -  Comments, Invisibles, Line Highlighting */
+/* base03 - #50507A -  Comments, Invisibles, Line Highlighting */
 .hljs-comment {
-  color: #626483;
+  color: #50507A;
 }
 
-/* base04 - #62d6e8 -  Dark Foreground (Used for status bars) */
+/* base04 - #B0B0DA -  Dark Foreground (Used for status bars) */
 .hljs-tag {
-  color: #62d6e8;
+  color: #B0B0DA;
 }
 
-/* base05 - #e9e9f4 -  Default Foreground, Caret, Delimiters, Operators */
+/* base05 - #D0D0FA -  Default Foreground, Caret, Delimiters, Operators */
 .hljs-subst,
 .hljs-punctuation,
 .hljs-operator {
-  color: #e9e9f4;
+  color: #D0D0FA;
 }
 
 .hljs-operator {
@@ -798,7 +852,7 @@ code.hljs {
 .hljs-selector-tag,
 .hljs-name,
 .hljs-deletion {
-  color: #ea51b2;
+  color: #FF4242;
 }
 
 /* base09 - Integers, Boolean, Constants, XML Attributes, Markup Link Url */
@@ -808,19 +862,19 @@ code.hljs {
 .hljs-attr,
 .hljs-variable.constant_,
 .hljs-literal {
-  color: #b45bcf;
+  color: #FC8D28;
 }
 
 /* base0A - Classes, Markup Bold, Search Text Background */
 .hljs-title,
 .hljs-class .hljs-title,
 .hljs-title.class_ {
-  color: #00f769;
+  color: #F3E877;
 }
 
 .hljs-strong {
   font-weight: bold;
-  color: #00f769;
+  color: #F3E877;
 }
 
 /* base0B - Strings, Inherited Class, Markup Code, Diff Inserted */
@@ -828,7 +882,7 @@ code.hljs {
 .hljs-addition,
 .hljs-title.class_.inherited__,
 .hljs-string {
-  color: #ebff87;
+  color: #59F176;
 }
 
 /* base0C - Support, Regular Expressions, Escape Characters, Markup Quotes */
@@ -837,7 +891,7 @@ code.hljs {
 .hljs-quote,
 .hljs-keyword.hljs-atrule,
 .hljs-regexp {
-  color: #a1efe4;
+  color: #0EF0F0;
 }
 
 /* base0D - Functions, Methods, Attribute IDs, Headings */
@@ -846,7 +900,7 @@ code.hljs {
 .ruby .hljs-property,
 .hljs-title.function_,
 .hljs-section {
-  color: #62d6e8;
+  color: #66B0FF;
 }
 
 /* base0E - Keywords, Storage, Selector, Markup Italic, Diff Changed */
@@ -854,11 +908,11 @@ code.hljs {
 .hljs-template-tag,
 .diff .hljs-meta,
 .hljs-keyword {
-  color: #b45bcf;
+  color: #F10596;
 }
 
 .hljs-emphasis {
-  color: #b45bcf;
+  color: #F10596;
   font-style: italic;
 }
 
@@ -866,7 +920,7 @@ code.hljs {
 .hljs-meta,
 .hljs-meta .hljs-keyword,
 .hljs-meta .hljs-string {
-  color: #00f769;
+  color: #F003EF;
 }
 
 .hljs-meta .hljs-keyword,
@@ -879,63 +933,86 @@ code.hljs {
 }
 
 .hover-animate {
+  -webkit-transition: all 0.01s ease;
   transition: all 0.01s ease;
-  transform: scale(1.02);
+  -webkit-transform: scale(1.02);
+          transform: scale(1.02);
 }
+
 .hover-animate:hover {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .portfolio-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-flow: wrap row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: wrap row;
+          flex-flow: wrap row;
   margin: 0 -10px;
   margin-bottom: 30px;
 }
+
 @media (min-width: 767px) {
   .portfolio-container {
     margin: 0 -11px;
     margin-bottom: 29px;
   }
 }
+
 .portfolio-container .mix {
   width: 100%;
   padding: 10px;
 }
+
 @media (min-width: 767px) {
   .portfolio-container .mix {
     width: 50%;
     padding: 11px;
   }
 }
+
 @media (min-width: 1200px) {
   .portfolio-container .mix {
     width: 33.3%;
   }
 }
+
 @media (min-width: 1600px) {
   .portfolio-container .mix {
     width: 25%;
   }
 }
+
 .portfolio-container .portfolio-image {
   position: relative;
   overflow: hidden;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .portfolio-container .portfolio-image:hover {
-  transform: scale(1.03);
+  -webkit-transform: scale(1.03);
+          transform: scale(1.03);
 }
+
 .portfolio-container .portfolio-image:hover .caption {
   opacity: 1;
   visibility: visible;
 }
+
 .portfolio-container .portfolio-image:hover .caption h2 {
-  transform: translateY(0);
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
 }
+
 .portfolio-container .portfolio-image img {
   width: 100%;
 }
+
 .portfolio-container .portfolio-image .link {
   position: absolute;
   top: 0;
@@ -944,6 +1021,7 @@ code.hljs {
   left: 0;
   z-index: 99;
 }
+
 .portfolio-container .caption {
   position: absolute;
   top: 0;
@@ -953,21 +1031,35 @@ code.hljs {
   padding: 10px 10px;
   opacity: 0;
   visibility: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: flex-end;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
+
 .portfolio-container .caption h2 {
   font-weight: normal;
   font-style: italic;
-  transform: translateY(50px);
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
 .content-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
 .video-container {
@@ -975,23 +1067,27 @@ code.hljs {
   position: relative;
   margin: 0 0 10px;
 }
+
 @media (min-width: 992px) {
   .video-container {
     margin: 0 auto 30px;
     max-width: 70%;
   }
 }
+
 @media (min-width: 1200px) {
   .video-container {
     margin: 0 auto 30px;
     max-width: 50%;
   }
 }
+
 .video-container:after {
   padding-top: 56.25%;
   display: block;
-  content: "";
+  content: '';
 }
+
 .video-container iframe {
   position: absolute;
   top: 0;
@@ -1001,22 +1097,34 @@ code.hljs {
 }
 
 .portfolio-controls {
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 14px;
   display: none;
 }
+
 @media (min-width: 767px) {
   .portfolio-controls {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: wrap row;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: wrap row;
+            flex-flow: wrap row;
   }
 }
+
 @media (min-width: 1200px) {
   .portfolio-controls {
     margin-bottom: 24px;
   }
 }
+
 .portfolio-controls .control {
   border: none;
   background: none;
@@ -1027,16 +1135,21 @@ code.hljs {
   padding: 0 5px;
   margin: 0 5px 5px;
   min-width: 80px;
+  -webkit-transition: all 0.01s ease;
   transition: all 0.01s ease;
-  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
+
 @media (min-width: 992px) {
   .portfolio-controls .control {
     margin: 0 25px 5px;
   }
 }
+
 .portfolio-controls .control:hover {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 .spin-holder {
@@ -1044,6 +1157,7 @@ code.hljs {
   margin: 0 auto;
   text-align: center;
 }
+
 @media (min-width: 767px) {
   .spin-holder {
     margin: 0 auto;
@@ -1057,16 +1171,20 @@ code.hljs {
   font-family: "IBM Plex Mono", monospace;
   font-weight: 500;
   color: #88FFE2;
+  -webkit-transition: none;
   transition: none;
-  transform: scale(1.04);
+  -webkit-transform: scale(1.04);
+          transform: scale(1.04);
 }
+
 .back-top:hover {
   color: #88FFE2;
-  transform: scale(1);
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 
 code {
-  background: #282936;
+  background: #0c1118;
   border-radius: 10px;
   padding: 3px 10px;
   display: inline-block;
@@ -1074,17 +1192,19 @@ code {
 
 pre {
   margin-bottom: 10px;
-  background: #282936;
+  background: #0c1118;
   border-radius: 10px;
   font-size: 0.875rem;
   padding: 10px;
 }
+
 @media (min-width: 767px) {
   pre {
     margin-bottom: 30px;
     font-size: 1rem;
   }
 }
+
 pre code {
   padding: 0;
 }
@@ -1099,24 +1219,31 @@ table {
   margin-bottom: 10px;
   text-align: left;
 }
+
 @media (min-width: 767px) {
   table {
     margin-bottom: 30px;
   }
 }
+
 table tbody tr:nth-child(odd) {
-  background: #282936;
+  background: #0c1118;
 }
+
 table td, table th {
   padding: 10px;
   white-space: nowrap;
 }
+
 table td {
   font-size: 1rem;
 }
 
 .pixelated {
   -ms-interpolation-mode: nearest-neighbor;
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: -o-pixelated;
   image-rendering: pixelated;
 }
 
@@ -1146,43 +1273,52 @@ tr:nth-child(odd) td:last-child {
   margin-bottom: 27px;
   border-bottom: 1px solid #FFF7EE;
 }
+
 @media (min-width: 767px) {
   .content {
     padding-top: 36px;
     margin-bottom: 37px;
   }
 }
+
 @media (min-width: 1200px) {
   .content {
     padding-top: 40px;
     margin-bottom: 37px;
   }
 }
+
 .content h1 {
   color: #FD88C2;
 }
+
 .content h1, .content h2 {
   font-style: italic;
   font-weight: bold;
 }
+
 .content .img-holder {
   margin-bottom: 10px;
   text-align: center;
 }
+
 @media (min-width: 767px) {
   .content .img-holder {
     margin-bottom: 30px;
   }
 }
+
 .content .img-holder img {
   display: inline-block;
   margin: 0 auto;
 }
+
 .content ul {
   margin: 0 0 20px;
   padding: 0 0 0 18px;
   list-style: disc;
 }
+
 @media (min-width: 767px) {
   .content ul {
     margin: 0 0 40px;
@@ -1197,15 +1333,19 @@ tr:nth-child(odd) td:last-child {
   margin-bottom: 10px;
   padding-top: 40px;
 }
+
 @media (min-width: 767px) {
   #footer {
     margin-bottom: 40px;
     padding-top: 40px;
   }
 }
+
 #footer p {
   margin-bottom: 0;
 }
+
 #footer .back-top {
   margin-bottom: 40px;
 }
+/*# sourceMappingURL=main.css.map */
