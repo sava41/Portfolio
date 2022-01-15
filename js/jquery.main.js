@@ -6,7 +6,8 @@ $(document).ready(function () {
         $(window).on('load', function () {
 
             var isotop = $('.portfolio-container').isotope({
-                itemSelector: '.mix'
+                itemSelector: '.mix',
+                transitionDuration: 0
             });
 
             $('.portfolio-controls').on('click', 'button', function () {

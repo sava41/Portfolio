@@ -116,7 +116,7 @@ p {
 
 a {
 	color: $base-link-color;
-	
+	transition: none;
 	&:hover {
 		color: $base-link-hover-color;
 		text-decoration: underline;
@@ -129,7 +129,7 @@ a {
 
 .container {
 	width: 100%;
-	padding: 0 8px;
+	padding: 0 20px;
 	margin: 0 auto;
 	@extend %clearfix;
     @include media('>=phone') {

@@ -2,18 +2,26 @@
     overflow: hidden;
 }
 
+.hover-animate {
+    transition: all 0.01s ease;  
+    transform: scale(1.02);
+    &:hover {
+        transform: scale(1);
+    }
+}
+
 .portfolio-container {
     display: flex;
     flex-flow: wrap row;
-    margin: 0 -4px;
-    margin-bottom: 99px;
+    margin: 0 -10px;
+    margin-bottom: 30px;
     @include media('>=phone') {
         margin: 0 -11px; 
-        margin-bottom: 48px;
+        margin-bottom: 29px;
     }
     .mix {
         width: 100%;
-        padding:4px;
+        padding: 10px;
         @include media('>=phone') {
             width: 50%;
             padding:11px;
@@ -99,13 +107,14 @@
 .portfolio-controls {
     justify-content: center;
     align-items: center;
-    margin-bottom: 19px;
+    margin-bottom: 14px;
     display: none;
     @include media('>=phone') {
         display: flex;
+        flex-flow: wrap row;
     }
     @include media('>=desktop') {
-        margin-bottom: 29px;
+        margin-bottom: 24px;
     }
     .control {
         border: none;
@@ -115,21 +124,22 @@
         font-family: $IBM;
         font-weight: 500;
         padding: 0 5px;
-        margin: 0 5px;
+        margin: 0 5px 5px;
         min-width: 80px;
         transition: all 0.01s ease;
+        transform: scale(1.1);
         @include media('>=tablet') {
-            margin: 0 25px;
+            margin: 0 25px 5px;
         }
         &:hover {
-            font-size: 1.375rem;
+            transform: scale(1);
         }
     }
 }
 
 .spin-holder {
     max-width: 350px;
-    margin: 0 auto 18px;
+    margin: 0 auto;
     text-align: center;
     @include media('>=phone') {
         margin: 0 auto;
@@ -139,13 +149,15 @@
 .back-top {
     display: inline-block;
     font-size: 1.875rem;
+    line-height: 1.875rem;
     font-family: $IBM;
     font-weight: 500;
     color: $aquamarine;
     transition: none;
+    transform: scale(1.04);
     &:hover {
-        font-size: 1.75rem;
         color: $aquamarine;
+        transform: scale(1);
     }
 }
 
@@ -210,15 +222,15 @@ tr:nth-child(odd) td:last-child { border-bottom-right-radius: 10px; border-top-r
 .content {
     overflow: hidden;
     font-size: 1.125rem;
-    margin-bottom: 67px;
+    margin-bottom: 27px;
     border-bottom: 1px solid $seashellpeach;
     @include media('>=phone') {
         padding-top: 36px; 
-        margin-bottom: 77px;
+        margin-bottom: 37px;
     }
     @include media('>=desktop') {
         padding-top: 40px;
-        margin-bottom: 70px;
+        margin-bottom: 37px;
     }
     h1 {
         color: $primary;

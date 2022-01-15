@@ -1,9 +1,9 @@
 #header {
-    overflow: hidden;
+    @extend %clearfix;
     padding-top: 22px;
     padding-bottom: 26px;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     @include media('>=phone') {
         padding-bottom: 30px;
     }
@@ -13,23 +13,17 @@
 }
 
 .logo {
-    @include size(242px, 82px);
+    @include size(223px, auto);
     text-align: center;
     @include media('>=phone') {
-        @include size(353px, 120px);
+        @include size(353px, auto);
     }
     @include media('>=desktop') {
-        @include size(430px, 146px);
+        @include size(430px, auto);
     }
     img {
         transition: all 0.01s ease;
         width: 100%;
-    }
-    &:hover {
-        img {
-            width: 98%;
-            margin: 0 auto; 
-        }
     }
 }
 
@@ -39,6 +33,7 @@
         @extend %clearfix;
         @extend %listreset;
         font-size: 1.5rem;
+        line-height: 1.5rem;
         font-family: $IBM;
         font-weight: 500; 
         @include media('>=phone') {
@@ -48,7 +43,6 @@
             display: block;
             text-align: right;
             margin-bottom: 20px;
-            transition: all 0.01s ease;
             @include media('>=phone') {
                 margin-bottom: 42px;
             }
@@ -57,9 +51,11 @@
             }
             a {
                 color: $primary;
-                transition: all 0.01s ease;   
+                display: inline-block;
+                transform: scale(1.06);
                 &:hover {
-                    font-size: 1.75rem;  
+                    color: $primary;
+                    transform: scale(1);
                 }
             }
         }
