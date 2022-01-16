@@ -165,7 +165,8 @@ code.hljs {
   from leaking into meta by accident
 */
 .hljs-meta .hljs-keyword,
-.hljs-meta .hljs-string
+.hljs-meta .hljs-string,
+.hljs-preprocessor
 {
   color: #F003EF;
 }
