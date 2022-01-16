@@ -632,7 +632,7 @@ a {
 }
 
 a:hover {
-  color: #FD88C2;
+  color: #FF80AB;
   text-decoration: underline;
 }
 
@@ -751,14 +751,14 @@ a:hover, a:focus {
 }
 
 #nav ul li a {
-  color: #FD88C2;
+  color: #FF80AB;
   display: inline-block;
   -webkit-transform: scale(1.06);
           transform: scale(1.06);
 }
 
 #nav ul li a:hover {
-  color: #FD88C2;
+  color: #FF80AB;
   -webkit-transform: scale(1);
           transform: scale(1);
 }
@@ -1071,14 +1071,14 @@ code.hljs {
 @media (min-width: 767px) {
   .video-container {
     margin: 0 auto 30px;
-    max-width: 70%;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 992px) {
   .video-container {
     margin: 0 auto 30px;
-    max-width: 50%;
+    max-width: 100%;
   }
 }
 
@@ -1128,7 +1128,7 @@ code.hljs {
 .portfolio-controls .control {
   border: none;
   background: none;
-  color: #FD88C2;
+  color: #FF80AB;
   font-size: 1.5rem;
   font-family: "IBM Plex Mono", monospace;
   font-weight: 500;
@@ -1293,7 +1293,7 @@ tr:nth-child(odd) td:last-child {
 }
 
 .content h1 {
-  color: #FD88C2;
+  color: #FF80AB;
 }
 
 .content h1, .content h2 {

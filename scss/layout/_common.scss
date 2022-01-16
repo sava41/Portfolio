@@ -84,11 +84,11 @@
     margin: 0 0 10px;
     @include media('>=tablet') {
         margin: 0 auto 30px;
-        max-width: 70%;
+        max-width: 100%;
     }
     @include media('>=desktop') {
         margin: 0 auto 30px;
-        max-width: 50%;
+        max-width: 100%;
     }
     &:after {
         padding-top: 56.25%;
