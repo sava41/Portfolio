@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sava Nozin - Keyboard</title>
+	<link rel="icon" href="../images/Logo outlined.png">
+    <!-- include the site stylesheet -->
+    <link media="all" rel="stylesheet" href="../css/main.css">
+    <!-- include jQuery library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')
+    </script>
+    <!-- include custom JavaScript -->
+    <script src="js/isotope.pkgd.min.js" defer></script>
+    <script src="js/jquery.main.js" defer></script>
+    <script src="js/highlight.min.js"></script>
+</head>
+
+<body>
+    <!-- main container of all the page elements -->
+    <div id="wrapper">
+        <div class="container">
+            <!-- main header of the site -->
+            <header id="header">
+                <!-- logo of the site -->
+                <div class="logo">
+                    <a href="https://www.savanozin.com">
+                        <img src="../images/logo.svg" alt="" class="hover-animate">
+                    </a>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="https://www.savanozin.com/about">About</a></li>
+                        <li><a href="mailto:sava41@gmail.com">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- main content area of the site -->
+            <main id="main">
+                <section class="content">
+                    <h1>Keyboard Build</h1>
+                    <p>The main goal of this project was to learn schematic capture and PCB layout. Before starting the project, I set a list of criteria for the final product:</p>
+                    <ul>
+                        <li>The keyboard must use a compact layout, similar to that of a laptop keyboard</li>
+                        <li>The casing must be as low profile as possible</li>
+                        <li>The keyboard must have bluetooth and USB functionality</li>
+                    </ul> 
+                    <p>I created my desired layout using <a href="http://www.keyboard-layout-editor.com/">keyboard layout editor</a>. The outer casing was purchased since manufacturing was not possible within the project timeframe. Other parts were selected mainly based on their thickness due to space constraints.
+                    <p>The PCB schematic and layout were designed in KiCad. The battery charging circuitry, bluetooth, and usb are handled by an <a href="https://learn.adafruit.com/adafruit-feather/overview">Adafruit Feather</a>.</p>
+                    <div class="img-holder">
+                        <img src="../images/projects/keyboard/schematic.png" alt="">
+                    </div>
+                    <p>The PCB was made single layer to be easily manufactured using DIY methods.</p>
+                    <div class="img-holder">
+                        <img src="../images/projects/keyboard/pcb.png" alt="">
+                    </div>
+                    <p>The PCB was CNC machined on a copper clad FR4 board.</p>
+                    <div class="img-holder">
+                        <img src="../images/projects/keyboard/cnc.png" alt="">
+                    </div>
+                    <p>All the parts before and after assembly:</p>
+                    <div class="img-holder">
+                        <img src="../images/projects/keyboard/img_71531.jpg" alt="">
+                    </div>
+                    <div class="img-holder">
+                        <img src="../images/projects/keyboard/img_7148.jpg" alt="">
+                    </div>
+                    <p>I used the <a href="https://qmk.fm/">QMK project</a> to quickly build the firmware. Unfortunately, due to the hardware design of the Adafruit Feather and poor wireless support of QMK, the battery life is very short.
+                    I was also too optimistic with the RF performance despite using an all metal enclosure. The range and latenency ended up being very poor and I only use the keyboard wired :(</p>
+                    <p>I'm planning to do a new version using the newer <a href="https://zmk.dev/">ZMK project</a> and build my pcb with fully integrated circuits intead of a premade board like the Feather.</p>
+                </section>
+            </main>
+            <footer id="footer">
+                <a href="https://www.savanozin.com" class="back-top smooth">Back to Home</a>
+                <p>All work is copyright of Sava Nozin &amp; respective clients. Work may not be used or modified without permission of the owner.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
