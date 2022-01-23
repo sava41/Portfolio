@@ -1013,6 +1013,10 @@ code.hljs {
   width: 100%;
 }
 
+.portfolio-container .portfolio-image video {
+  width: 100%;
+}
+
 .portfolio-container .portfolio-image .link {
   position: absolute;
   top: 0;
@@ -1188,7 +1192,7 @@ code.hljs {
 }
 
 code {
-  background: #1e1d27;
+  background: #19181e;
   border-radius: 10px;
   padding: 3px 10px;
   display: inline-block;
@@ -1196,7 +1200,7 @@ code {
 
 pre {
   margin-bottom: 10px;
-  background: #1e1d27;
+  background: #19181e;
   border-radius: 10px;
   font-size: 0.875rem;
   padding: 10px;
@@ -1231,7 +1235,7 @@ table {
 }
 
 table tbody tr:nth-child(odd) {
-  background: #1e1d27;
+  background: #19181e;
 }
 
 table td, table th {
