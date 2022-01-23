@@ -194,6 +194,7 @@ hr {
   -webkit-box-sizing: content-box;
           box-sizing: content-box;
   height: 0;
+  border-width: 0px;
 }
 
 /**
@@ -1279,7 +1280,6 @@ tr:nth-child(odd) td:last-child {
   overflow: hidden;
   font-size: 1.125rem;
   margin-bottom: 27px;
-  border-bottom: 1px solid #FFF7EE;
 }
 
 @media (min-width: 550px) {
@@ -1331,6 +1331,10 @@ tr:nth-child(odd) td:last-child {
   .content ul {
     margin: 0 0 40px;
   }
+}
+
+.content hr {
+  border-bottom: 1px solid #FFF7EE;
 }
 
 #footer {

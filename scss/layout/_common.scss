@@ -229,7 +229,6 @@ tr:nth-child(odd) td:last-child { border-bottom-right-radius: 10px; border-top-r
     overflow: hidden;
     font-size: 1.125rem;
     margin-bottom: 27px;
-    border-bottom: 1px solid $seashellpeach;
     @include media('>=phone') {
         padding-top: 36px; 
         margin-bottom: 37px;
@@ -264,4 +263,7 @@ tr:nth-child(odd) td:last-child { border-bottom-right-radius: 10px; border-top-r
             margin: 0 0 40px;
         }
     }
+    hr {
+        border-bottom: 1px solid $seashellpeach;
+      }
 }
