@@ -1319,6 +1319,13 @@ tr:nth-child(odd) td:last-child {
 .content .img-holder img {
   display: inline-block;
   margin: 0 auto;
+  vertical-align: middle;
+}
+
+.content .img-holder video {
+  display: inline-block;
+  margin: 0 auto;
+  vertical-align: middle;
 }
 
 .content ul {

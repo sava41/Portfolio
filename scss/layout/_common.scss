@@ -253,6 +253,12 @@ tr:nth-child(odd) td:last-child { border-bottom-right-radius: 10px; border-top-r
         img {
             display: inline-block;
             margin: 0 auto;
+            vertical-align: middle;
+        }
+        video {
+            display: inline-block;
+            margin: 0 auto;
+            vertical-align: middle;
         }
     }
     ul {
