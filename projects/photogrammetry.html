@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sava Nozin - Photogrammetry</title>
+	<link rel="icon" href="../images/Logo outlined.png">
+    <!-- include the site stylesheet -->
+    <link media="all" rel="stylesheet" href="../css/main.css">
+    <!-- include jQuery library -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" defer></script>
+    <script>
+        window.jQuery || document.write('<script src="js/jquery-3.3.1.min.js" defer><\/script>')
+    </script>
+    <!-- include custom JavaScript -->
+    <script src="js/isotope.pkgd.min.js" defer></script>
+    <script src="js/jquery.main.js" defer></script>
+    <script src="js/highlight.min.js"></script>
+</head>
+
+<body>
+    <!-- main container of all the page elements -->
+    <div id="wrapper">
+        <div class="container">
+            <!-- main header of the site -->
+            <header id="header">
+                <!-- logo of the site -->
+                <div class="logo">
+                    <a href="https://www.savanozin.com">
+                        <img src="../images/logo.svg" alt="" class="hover-animate">
+                    </a>
+                </div>
+                <nav id="nav">
+                    <ul>
+                        <li><a href="https://www.savanozin.com/about">About</a></li>
+                        <li><a href="mailto:sava41@gmail.com">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <!-- main content area of the site -->
+            <main id="main">
+                <section class="content">
+                    <h1>Photogrammetry</h1>
+                    <p>I have been using photogrammetry for over 7 years. Texture extraction and millimeter to sub-millimeter tolerances mean photogrammetry is useful for art asset pipelines and engineering applications.</p>
+                    <h2>Monkey Piggy Bank</h2>
+                    <div class="img-holder">
+                        <img src="../images/projects/photogrammetry/calibrationMonkey.png" alt="">
+                    </div>
+                    <div class="img-holder">
+                        <img src="../images/projects/photogrammetry/final.png" width="1500" alt="">
+                    </div>
+                    <div class="video-container">
+                        <!-- Replace this iframe code with you code -->
+                        <iframe src="../3d/monkey.html" allowfullscreen="true" frameborder="0" mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel="" scrolling="no"></iframe>
+                    </div>
+                    <h2>Carbon Fiber Tub Scan</h2>
+                    <p>This scan was done for the uOttawa supermileage team. The carbon fiber chassis was handbuilt. An accurate model was needed to avoid interference issues when designing the interior assemblies. 
+                    I wasn't allowed to paint or coat the chassis in anything to make it lighter which made the photo dynamic range very low. I ended up using hundreds of colored stickers to get better keypoint detection.</p>
+                    <div class="img-holder">
+                        <img src="../images/projects/photogrammetry/img_8194.jpg" width="1500" alt="">
+                    </div>
+                    <div class="img-holder">
+                        <img src="../images/projects/photogrammetry/calibrationCar.png"  width="1500" alt="">
+                    </div>
+                    <p>The raw scan data was then processed in 3ds Max and then imported into SolidWorks. The mounting point datums were used to calibrate the geometry size.</p>
+                    <div class="img-holder">
+                        <img src="../images/projects/photogrammetry/meshRefinement.png" width="1500" alt="">
+                    </div>
+                    <div class="img-holder">
+                        <img src="../images/projects/photogrammetry/solidworks.png" width="1500" alt="">
+                    </div>
+                </section>
+            </main>
+            <footer id="footer">
+                <a href="https://www.savanozin.com" class="back-top smooth">Back to Home</a>
+                <p>All work is copyright of Sava Nozin &amp; respective clients. Work may not be used or modified without permission of the owner.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
