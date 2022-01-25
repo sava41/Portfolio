@@ -1,8 +1,6 @@
 // mp4 img attributes
-var videoAttr = { 'autoplay': true, 'loop': true, 'mute': true, 'playsinline': true, 'poster': "images/loading.svg"};
-var imgMP4s = Array.prototype.map.call(
-    document.querySelectorAll('img[src*=".mp4"]'),
-    function(img){
+var videoAttr = { 'autoplay': true, 'loop': true, 'muted': true, 'playsinline': true, 'poster': "images/loading.svg"};
+var imgMP4s = Array.prototype.map.call( document.querySelectorAll('img[src*=".mp4"]'), function(img){
 
     var src = img.src;
     img.src = null;
@@ -22,10 +20,11 @@ var imgMP4s = Array.prototype.map.call(
     });
 
     img.src = src;
-  });
+});
 
 
-// code hilight
+// code highlight
 $(document).ready(function () {
-    hljs.highlightAll();
+    if(typeof hljs !== 'undefined')
+        hljs.highlightAll();
 });
