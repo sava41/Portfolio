@@ -16,7 +16,7 @@
 	<script src="js/jquery.index.js" defer></script>
     <script src="js/jquery.main.js" defer></script>
 </head>
-<body>
+<body onLoad="pageLoad();">
 	<!-- main container of all the page elements -->
 	<div id="wrapper">
         <div class="container">
@@ -45,7 +45,7 @@
                     <button type="button" class="control" data-filter=".eng">ENG</button>
                 </div>
                 <!-- portfolio items holder -->
-                <div class="portfolio-container">
+                <div id="tiles" class="portfolio-container">
                     <!-- Portfolio Item-->
                     <div class="mix 3d">
                         <div class="portfolio-image">
@@ -141,7 +141,7 @@
                 </section>
             </main>
             <footer id="footer">
-                <a href="#wrapper" class="back-top smooth">Back to Top</a>
+                <a id="footerText" href="#wrapper" class="back-top smooth">Loading</a>
                 <p>All work is copyright of Sava Nozin &amp; respective clients. Work may not be used or modified without permission of the owner.</p>
             </footer>
         </div>

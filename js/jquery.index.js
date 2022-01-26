@@ -56,3 +56,9 @@ $('a.smooth ').on('click', function (e) {
         window.location.hash = target;
     });
 });
+
+// pre loading
+function pageLoad() {
+    document.getElementById("tiles").style.visibility = "visible";
+    jQuery("#footerText").text("Back to Top")
+}

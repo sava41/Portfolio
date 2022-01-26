@@ -956,6 +956,7 @@ code.hljs {
           align-items: flex-start;
   margin: 0 -10px;
   margin-bottom: 30px;
+  visibility: hidden;
 }
 
 @media (min-width: 550px) {
