@@ -1071,7 +1071,7 @@ code.hljs {
 .video-container {
   overflow: hidden;
   position: relative;
-  margin: 0 0 10px;
+  margin: 0 0 30px;
 }
 
 @media (min-width: 767px) {
@@ -1201,7 +1201,7 @@ code {
 }
 
 pre {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   background: #19181e;
   border-radius: 10px;
   font-size: 0.875rem;
@@ -1226,7 +1226,7 @@ pre code {
 table {
   width: 100%;
   max-width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-align: left;
 }
 
@@ -1307,7 +1307,7 @@ tr:nth-child(odd) td:last-child {
 }
 
 .content .img-holder {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
   text-align: center;
 }
 

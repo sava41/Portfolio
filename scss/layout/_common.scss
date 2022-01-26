@@ -84,7 +84,7 @@
 .video-container {
     overflow: hidden;
     position: relative;
-    margin: 0 0 10px;
+    margin: 0 0 30px;
     @include media('>=tablet') {
         margin: 0 auto 30px;
         max-width: 100%;
@@ -175,7 +175,7 @@ code {
 }
 
 pre {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     background: $charade;
     border-radius: 10px;
     font-size: 0.875rem;
@@ -196,7 +196,7 @@ pre {
 table {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 30px;
     text-align: left;
     @include media('>=phone') {
         margin-bottom: 30px;
@@ -245,7 +245,7 @@ tr:nth-child(odd) td:last-child { border-bottom-right-radius: 10px; border-top-r
         font-weight: bold;
     }
     .img-holder {
-        margin-bottom: 10px;
+        margin-bottom: 30px;
         text-align: center;
         @include media('>=phone') {
             margin-bottom: 30px;
