@@ -57,7 +57,7 @@ h1, .h1 {
 
 h2, .h2 {
 	font-size: $h2-small-font-size;
-	text-shadow: 1px 1px #19181e;
+	text-shadow: 1px 1px $charade;
 	
 	@include media('>=tablet') {
 		font-size: $h2-font-size;
