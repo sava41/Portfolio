@@ -69,11 +69,11 @@
 
                     <p>CenterNet architecture diagram:</p>
                     <div class="img-holder">
-                        <img src="../images/projects/poseEstimation/centernet architecture.jpg" width="50%" alt="">
+                        <img src="../images/projects/poseEstimation/centernet architecture.jpg" width="500" alt="">
                     </div>
                     <p>CenterNet example outputs for various tasks:</p>
                     <div class="img-holder">
-                        <img src="../images/projects/poseEstimation/centernet usage examples.jpg" width="50%" alt="">
+                        <img src="../images/projects/poseEstimation/centernet usage examples.jpg" width="500" alt="">
                     </div>
 
                     <h2>Model Development</h2>
@@ -82,10 +82,10 @@
                     
                     <p>Example of door pose and class estimation at work. Notice in the second video how rectangular objects are being detected as doors:</p>
                     <div class="img-holder"><center>
-                        <video loop autoplay muted playsinline width="30%">
+                        <video loop autoplay muted playsinline width="300">
                             <source src="../images/projects/poseEstimation/demo door 1.mp4" type="video/mp4">
                         </video>
-                        <video loop autoplay muted playsinline width="30%">
+                        <video loop autoplay muted playsinline width="300">
                             <source src="../images/projects/poseEstimation/demo door 2.mp4" type="video/mp4">
                         </video>
                     </center></div>
@@ -94,19 +94,19 @@
 
                     <p>Ellipse notation (source: <a href="https://en.wikipedia.org/wiki/Ellipse#/media/File:Ellipse-def0.svg">wikipedia</a>):</p>
                     <div class="img-holder">
-                        <img src="../images/projects/poseEstimation/ellipse notation.jpg" width="50%" alt="">
+                        <img src="../images/projects/poseEstimation/ellipse notation.jpg" width="500" alt="">
                     </div>
 
                     <p>Finding distance <i>D</i> from camera if screen space radius <i>r</i> and world space radius <i>R</i> are known:</p>
                     <div class="img-holder">
-                        <img src="../images/projects/poseEstimation/trigonometry diagram.jpg" width="50%" alt="">
+                        <img src="../images/projects/poseEstimation/trigonometry diagram.jpg" width="500" alt="">
                     </div>
 
                     <p>Unfortunately, a dataset with such specific labels does not exist. I had two options: collect my own real-world data and label it (or pay someone to label it), or program a generator to create pre-labeled computer-generated images. The second option seemed more interesting lol. I started creating the generator in Blender, but after getting frustrated with Blender's Python API, I switched to Unreal Engine. The basic idea is to randomize the placement of a coffee cup in a scene, randomize the background HDR, randomize the table surface, cup mesh, liquid level, and liquid material. I would have liked to add teabags and spoons randomization in the cups as well, but the generator stage was taking too long. Based on my previous experience with door false positives on 1:2 rectangular objects, I was adamant to include cylindrical distractors into this dataset. I cut this feature for the same reason as the spoon, but my intuition was correct. The final model tends to give false positives on plates, circular speakers, and other circular objects. I used an Unreal Engine plugin to save each frame. Each randomization saves the RGB image and a mask image of the cup opening. The position of ellipse center + vertices (c, v<sub>1</sub>, v<sub>2</sub>) are calculated by applying the OpenCV contour/fit ellipse functions on the mask image.</p>
 
                     <p>Examples of generated data:</p>
                     <div class="img-holder">
-                        <img src="../images/projects/poseEstimation/cups data.webp" width="50%" alt="">
+                        <img src="../images/projects/poseEstimation/cups data.webp" width="500" alt="">
                     </div>
 
                     <p>With 3000 frames generated (completely arbitrary number but I figured 3000 frames was more than enough to cover every permutation my generator allowed) and a jupyter notebook written, I could train my model. My computer at the time was pretty old so I decided to train using Google Collab pro. Collab pro is nice for speed but also setting up a consistent and repeatable Python environment. The end result was a model with very good true positive predictions, but also a decent number of false positives on circular objects as mentioned before. The regression head doing the 2D keypoint position estimation was very rough. I could improve this by adding additional heads for each of the keypoints (this is the recommended implementation for keypoint detection in the centernet paper) but I wanted to wrap this project up by the time I got here.</p>
