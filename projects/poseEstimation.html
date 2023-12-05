@@ -120,11 +120,22 @@
 
                     <h2>Conclusion</h2>
 
-                    <p>I'm proud of my accomplishment with very little outside help; however, the amount of work required to improve performance is too high. Debugging pytorch and training notebooks is also not pleasant. It was particularly annoying for this project because I was making my notebook in parallel with generating my data. I did not validate my notebook against a standard dataset and as a result, it's difficult to know if issues are caused due to my training setup or my dataset.</p>
+                    <p>I'm proud of my accomplishment with very little outside help; however, the amount of work required to improve
+                        performance is too high. Debugging pytorch and training notebooks is also not pleasant. It was particularly annoying
+                        for this project because I was making my notebook in parallel with generating my data. I did not validate my
+                        notebook against a standard dataset or write any unit tests and as a result, it's difficult to know if issues are
+                        caused due to my training setup or my dataset.</p>
 
                     <p>If you're just getting started with machine learning, I would recommend focusing on just the training part. Find a popular open source dataset that has the labels and classes you need like <a href="https://cocodataset.org/#home">COCO</a>. If you need niche labels/classes, I would switch your first experiments to common labels/classes. That way you can validate your model against papers that use the same dataset.</p>
 
-                    <p>If you're interested in getting started with synthetic data, I think Unreal is a good place to start. Saving segmentation masks is very easy with the <a href="https://github.com/TimmHess/UnrealImageCapture">Unreal plugin I used</a>. Saving keypoint and 3D labels is also fairly easy with <a href="https://docs.unrealengine.com/5.1/en-US/BlueprintAPI/Json/">Unreal JSON blueprint nodes</a>. Make sure to have a clear scope for your classes and use case. The larger the dataset scope, the more complex your generator will be. Creating complex generators can be a significant undertaking. I'm open sourcing my cups generator if you would like to take a look at how it's done. If you need a more complex generator, <a href="https://www.sbxrobotics.com/">my current employer as of writing this article</a> provides a bespoke synthetic data service. Their generator capabilities far exceed the cups project.</p>
+                    <p>If you're interested in getting started with synthetic data, I think Unreal is a good place to start. Saving
+                        segmentation masks is very easy with the <a href="https://github.com/TimmHess/UnrealImageCapture">Unreal plugin I
+                            used</a>. Saving keypoint and 3D labels is also fairly easy with <a
+                            href="https://docs.unrealengine.com/5.1/en-US/BlueprintAPI/Json/">Unreal JSON blueprint nodes</a>. Make sure to
+                        have a clear scope for your classes and use case. The larger the dataset scope, the more complex your generator will
+                        be. Creating complex generators can be a significant undertaking. <a href="https://www.sbxrobotics.com/">My current
+                            employer as of writing this article</a> provides a bespoke synthetic data service. Their generator capabilities
+                        far exceed the cups project.</p>
 
                     <p>That's all I have left to say on this topic. Thanks for reading and feel free to reach out if you need any help :)</p>
                     <center>
