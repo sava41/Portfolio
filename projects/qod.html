@@ -52,17 +52,17 @@
                     </div>
                     <p>Fringing occurs wherever there's a high contrast transition on the vertical axis. Light-to-dark causes magenta fringing, and dark-to-light causes green fringing, as seen in the image above. 
                     To my surprise, there did not a exist a solution to eliminate the fringing at the time of purchasing the monitor in 2023.
-                    <a href="https://www.reddit.com/r/Monitors/comments/w9qm0y/actual_fix_for_the_aw3423dw_subpixel_layouttext/" target="_blank">There have been attempts to fix this issue, but only for text</a>
-                    , which is only a partial solution since fringing can occur on any high contrast transition. <a href="https://github.com/microsoft/PowerToys/issues/25595#issuecomment-1543299153" target="_blank">I saw a Github issue thread</a>
+                    <a href="https://www.reddit.com/r/Monitors/comments/w9qm0y/actual_fix_for_the_aw3423dw_subpixel_layouttext/" target="_blank">There had been attempts to fix this issue, but only for text</a>, 
+                    which is only a partial solution since fringing can occur on any high contrast transition. <a href="https://github.com/microsoft/PowerToys/issues/25595#issuecomment-1543299153" target="_blank">I saw a Github issue thread</a>
                     that suggests a full-screen filter, which gave me the idea for this app.
                     </p>
-                    <p>The basic idea is to apply a post-process effect to the entire Windows UI. After doing some research, I found out that the Windows UI renderer service, dwm.exe, uses Directx11 for drawing. 
-                    I would only have to inject a custom post-process HLSL shader into the service to apply my filter. Luckily, <a href="https://github.com/lauralex/dwm_lut" target="_blank">I found an open source application</a>
-                     that does just this for another use case. I used their code as the base for my app and added the custom filter logic. The only thing left was to figure out a filter that would reduce fringing.
+                    <p>The basic idea is to apply a post-process effect on the entire Windows UI. After doing some research, I learned the Windows UI renderer service, dwm.exe, uses Directx11 for drawing. 
+                    To apply a post-process filter on the whole UI, I would only need to inject a custom HLSL shader into the service. Luckily, <a href="https://github.com/lauralex/dwm_lut" target="_blank">I found an open source application</a>
+                     that does just this for another use case. After building my app using the other project as a base, it was onto the final task: create a fringe reducing post-process shader.
                     </p>
                     <p>My idea for the filter was to reduce the brightness of the green subpixel wherever a dark-to-light transition occurs and vice-versa for light-to-dark transitions. 
                     A simple filter would output the final green subpixel brightness as the average of the original value and the original value of the green subpixel above it. 
-                    In the example below, you can see how the top-most green subpixel row that's lit has its brightness reduced by half with this algorithm:
+                    In the example below, you can see how the top-most lit green subpixel row has its brightness reduced by half with this algorithm:
                     </p>
                     <div class="img-holder">
                         <img src="../images/projects/qod/filterAlgorithm.jpg" width="100%" alt="">
