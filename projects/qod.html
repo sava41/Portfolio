@@ -42,27 +42,27 @@
             <main id="main">
                 <section class="content">
                     <h1>OLED Defringer</h1>
-                    <p>This project started after I upgraded my monitor to the Alienware AW3423DWF which uses a Samsung Display quantum OLED panel. The Monitor is great with only one downside:</p>
+                    <p>This project started after I upgraded my monitor to the Alienware AW3423DWF which uses a Samsung Display quantum dot OLED (QDOLED) panel. I love the monitor but it has one downside:</p>
                     <div class="img-holder">
                         <img src="../images/projects/qod/fringing.jpg" width="75%" alt="Example of green/magenta fringing found on qd oled displays. Photo: Samuel Buchmann">
                     </div>
-                    <p>This is caused by the irregular subpixel layout of these panels where the green subpixel is on top and the blue / red subpixels are on the bottom:</p>
+                    <p>This is caused by the irregular subpixel layout used by QDOLED panels where the green subpixel is on top and the blue / red subpixels are on the bottom:</p>
                     <div class="img-holder">
                         <img src="../images/projects/qod/fringeExample.jpg" width="75%" alt="">
                     </div>
-                    <p>Fringing occurs anytime there's a high contrast vertical transition. Light-to-dark causes magenta and dark-to-light causes green fringing as seen in the image above.
-                    Surprisingly, this is not a solved issue. <a href="https://www.reddit.com/r/Monitors/comments/w9qm0y/actual_fix_for_the_aw3423dw_subpixel_layouttext/" target="_blank">There have been attempts to fix this issue but only for text</a> 
-                    which is only a partial solution since fringing can occur on any high contrast transition. <a href="https://github.com/microsoft/PowerToys/issues/25595#issuecomment-1543299153" target="_blank">I saw a github issue thread</a> 
-                    that suggests a full screen filter which gave me the idea for this app. 
+                    <p>Fringing occurs wherever there's a high contrast transition on the vertical axis. Light-to-dark causes magenta fringing, and dark-to-light causes green fringing, as seen in the image above. 
+                    To my surprise, there did not a exist a solution to eliminate the fringing at the time of purchasing the monitor in 2023.
+                    <a href="https://www.reddit.com/r/Monitors/comments/w9qm0y/actual_fix_for_the_aw3423dw_subpixel_layouttext/" target="_blank">There have been attempts to fix this issue, but only for text</a>
+                    , which is only a partial solution since fringing can occur on any high contrast transition. <a href="https://github.com/microsoft/PowerToys/issues/25595#issuecomment-1543299153" target="_blank">I saw a Github issue thread</a>
+                    that suggests a full-screen filter, which gave me the idea for this app.
                     </p>
-                    <p>The basic idea is to apply a post-process effect to the whole Windows UI. After doing some research, I found out the the Windows UI renderer service, dwm.exe uses Directx11 to draw.
-                    I would only have to inject a custom post process shader into the service to apply my filter. Luckily 
-                    <a href="https://github.com/lauralex/dwm_lut" target="_blank">I found an open source application</a> that does just this for another usecase. 
-                    I used their code as the base for my app and added the custom filter logic. Only thing left was to figure out a filter that would reduce fringe.
+                    <p>The basic idea is to apply a post-process effect to the entire Windows UI. After doing some research, I found out that the Windows UI renderer service, dwm.exe, uses Directx11 for drawing. 
+                    I would only have to inject a custom post-process HLSL shader into the service to apply my filter. Luckily, <a href="https://github.com/lauralex/dwm_lut" target="_blank">I found an open source application</a>
+                     that does just this for another use case. I used their code as the base for my app and added the custom filter logic. The only thing left was to figure out a filter that would reduce fringing.
                     </p>
-                    <p>My idea for the filter was to reduce the brighness of the green subpixel wherever a dark-to-light transition occured and vise-versa for light-to-dark. 
-                    This can be done very simply if you output the final green subpixel brighten as the average of the original value and the original value of the green subpixel above it.
-                    In the example below, you can see how the top-most green subpixel thats on has its brightness reduced by half with this algorithm:
+                    <p>My idea for the filter was to reduce the brightness of the green subpixel wherever a dark-to-light transition occurs and vice-versa for light-to-dark transitions. 
+                    A simple filter would output the final green subpixel brightness as the average of the original value and the original value of the green subpixel above it. 
+                    In the example below, you can see how the top-most green subpixel row that's lit has its brightness reduced by half with this algorithm:
                     </p>
                     <div class="img-holder">
                         <img src="../images/projects/qod/filterAlgorithm.jpg" width="100%" alt="">
@@ -72,8 +72,8 @@
                     <div class="img-holder">
                         <img src="../images/projects/qod/filter.jpg" width="100%" alt="">
                     </div>
-                    <p>The main downside to this approach is you are applying a box blur type filter to the green channel. As a result, everything ends up looking slightly blurred.
-                    I improved filter slightly by masking the effect using an edge detection filter. Now the green channel box blur is only applied to pixels where my Sobel filter detects an edge.
+                    <p>The main downside to this approach is you're in essence, applying a box blur type filter to the green channel. As a result, everything ends up looking slightly blurred.
+                    I slightly improved the filter by masking it using an edge detection filter. Now the green channel box blur is only applied to pixels where my Sobel filter detects an edge.
                     It's still not perfect, but I'm hoping to improve it further with some help. If you're an image processing expert, please check out the github and suggest potential better techniques.
                     </p>
                     <h1><u><a href="https://github.com/sava41/qdoled-defringe" target="_blank">Github Project</a></u></h1>
